@@ -61,7 +61,7 @@ public:
             insert_uniform_point_in_configuration_and_update_chain(generator, points_not_in_last);
           } else if(v < static_cast<double>(ppjsdm::size_of(last_configuration_))) { // Happens with probability s_2 / (s_1 + s_2).
             delete_random_point_in_configuration_and_update_chain(generator, last_configuration_);
-            if(empty(last_configuration_)) {
+            if(is_empty(last_configuration_)) {
               last_configuration_ = std::move(points_not_in_last);
               return;
             }
@@ -131,7 +131,7 @@ public:
         stop_if_interrupt(timer);
       }
     }
-    return std::pair<bool, Configuration>(empty(L_complement), L);
+    return std::pair<bool, Configuration>(is_empty(L_complement), L);
   }
 
 private:

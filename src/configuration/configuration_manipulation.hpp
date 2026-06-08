@@ -99,7 +99,7 @@ inline auto remove_random_point(Generator& generator, Configuration& configurati
 }
 
 template<typename Configuration>
-inline bool empty(const Configuration& configuration) {
+inline bool is_empty(const Configuration& configuration) {
   return traits::configuration_manipulation<Configuration>::empty(configuration);
 }
 

@@ -131,7 +131,7 @@ inline auto simulate_metropolis_hastings(Generator& generator,
         add_point(points, point);
         ++points_by_type[k + 1][random_type];
       }
-    } else if(!empty(points)) { // Deaths
+    } else if(!is_empty(points)) { // Deaths
       const auto current_size = static_cast<double>(size_of(points));
       const auto point(remove_random_point(generator, points));
 
